@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>법무법인 선해 | 형사·민사·행정·가사·기업법률자문 전문 로펌</title>
+<meta name="description" content="법무법인 선해는 판사 출신 대표변호사를 중심으로 형사·민사·행정·가사·기업법률자문을 수행하는 서초동 로펌입니다. 만족과 감동을 선사해드립니다." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<style>
+  :root{
+    --navy-900:#0b1024;
+    --navy-800:#11183a;
+    --navy-700:#1a2452;
+    --navy-600:#1f2d6b;
+    --gold:#c9a96a;
+    --gold-2:#e2c98a;
+    --red:#d23a3a;
+    --bg:#f5f6fa;
+    --bg-2:#eceef5;
+    --text:#1b1f33;
+    --text-soft:#4d5470;
+    --line:#dfe2ed;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  ul,ol{list-style:none}
+  img{max-width:100%;display:block}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+  .container{max-width:1280px;margin:0 auto;padding:0 32px}
+
+  /* ============ Header ============ */
+  .header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    transition:background .3s ease, box-shadow .3s ease, color .3s ease;
+    color:#fff;
+  }
+  .header .inner{
+    display:flex;align-items:center;justify-content:space-between;
+    height:78px;max-width:1280px;margin:0 auto;padding:0 32px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+  .brand .mark{
+    width:36px;height:36px;border-radius:50%;
+    background:linear-gradient(135deg,var(--gold) 0%,var(--gold-2) 100%);
+    display:grid;place-items:center;color:#1a1a1a;font-weight:900;
+    box-shadow:0 6px 16px rgba(201,169,106,.35);
+  }
+  .brand .name{font-size:18px}
+  .brand .name small{display:block;font-size:11px;letter-spacing:3px;font-weight:500;opacity:.8;margin-top:-2px}
+
+  .gnb{display:flex;gap:36px;align-items:center}
+  .gnb a{font-weight:600;font-size:15px;opacity:.92;transition:opacity .2s}
+  .gnb a:hover{opacity:1;color:var(--gold-2)}
+
+  .header-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border:1px solid rgba(255,255,255,.4);
+    border-radius:999px;font-size:14px;font-weight:600;
+    transition:background .2s, border-color .2s;
+  }
+  .header-cta:hover{background:rgba(255,255,255,.12);border-color:#fff}
+
+  .header.scrolled{background:rgba(255,255,255,.96);color:var(--text);box-shadow:0 2px 16px rgba(11,16,36,.08);backdrop-filter:saturate(180%) blur(8px)}
+  .header.scrolled .gnb a:hover{color:var(--navy-700)}
+  .header.scrolled .header-cta{border-color:var(--navy-700);color:var(--navy-700)}
+  .header.scrolled .header-cta:hover{background:var(--navy-700);color:#fff}
+
+  /* ============ Hero ============ */
+  .hero{
+    position:relative;min-height:760px;color:#fff;overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(11,16,36,.65) 0%, rgba(11,16,36,.85) 100%),
+      radial-gradient(1200px 600px at 20% 20%, #1f2d6b 0%, transparent 60%),
+      linear-gradient(135deg,#0b1024 0%,#11183a 60%,#1a2452 100%);
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      radial-gradient(circle at 80% 30%, rgba(201,169,106,.18), transparent 40%),
+      radial-gradient(circle at 30% 80%, rgba(31,45,107,.55), transparent 50%);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;z-index:2;
+    display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;
+    padding:160px 0 110px;max-width:1280px;margin:0 auto;padding-left:32px;padding-right:32px;
+  }
+  .hero-eyebrow{
+    display:inline-block;font-size:13px;letter-spacing:6px;color:var(--gold-2);
+    margin-bottom:22px;text-transform:uppercase;font-weight:600;
+  }
+  .hero h1{
+    font-size:56px;line-height:1.18;font-weight:800;letter-spacing:-1px;
+    margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--gold-2)}
+  .hero p.lead{font-size:18px;color:#c8cce0;max-width:520px;margin-bottom:36px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 28px;border-radius:6px;font-weight:700;font-size:15px;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s;
+  }
+  .btn-primary{background:var(--gold);color:#1a1a1a}
+  .btn-primary:hover{background:var(--gold-2);transform:translateY(-1px);box-shadow:0 10px 24px rgba(201,169,106,.3)}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:#fff}
+
+  /* Hero result card */
+  .result-card{
+    background:rgba(255,255,255,.98);color:var(--text);
+    border-radius:14px;padding:32px;
+    box-shadow:0 30px 60px rgba(0,0,0,.45);
+    backdrop-filter:blur(6px);
+    max-width:420px;margin-left:auto;
+  }
+  .result-card .badge{
+    display:inline-block;background:var(--navy-800);color:#fff;
+    font-size:12px;font-weight:700;padding:6px 12px;border-radius:4px;letter-spacing:1px;
+  }
+  .result-card h3{
+    font-size:24px;margin:14px 0 18px;font-weight:800;
+  }
+  .result-card h3 b{color:var(--red)}
+  .result-card .row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px;
+  }
+  .result-card .row:last-of-type{border-bottom:none}
+  .result-card .row .label{color:var(--text-soft)}
+  .result-card .row .verdict{
+    background:var(--red);color:#fff;font-weight:700;font-size:12px;
+    padding:4px 10px;border-radius:4px;
+  }
+  .result-card .row .verdict.gray{background:#7a8093}
+  .result-card .more-btn{
+    margin-top:18px;width:100%;background:var(--navy-800);color:#fff;
+    padding:14px;border-radius:6px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .result-card .more-btn:hover{background:var(--navy-700)}
+
+  /* Hero counter strip */
+  .hero-strip{
+    position:absolute;bottom:0;left:0;right:0;z-index:2;
+    background:rgba(11,16,36,.6);backdrop-filter:blur(8px);
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+  .hero-strip .inner{
+    max-width:1280px;margin:0 auto;padding:18px 32px;
+    display:flex;align-items:center;justify-content:space-between;color:#fff;
+  }
+  .hero-strip .stats{display:flex;gap:48px}
+  .hero-strip .stats .stat strong{display:block;font-size:24px;color:var(--gold-2);font-weight:800}
+  .hero-strip .stats .stat span{font-size:12px;color:#aab1cb;letter-spacing:1px}
+  .hero-strip .phone{display:flex;align-items:center;gap:14px;font-weight:700;font-size:18px}
+  .hero-strip .phone .dot{
+    width:36px;height:36px;border-radius:50%;background:var(--gold);color:#1a1a1a;
+    display:grid;place-items:center;font-size:18px;
+  }
+
+  /* Floating right side */
+  .floater{
+    position:fixed;right:18px;top:50%;transform:translateY(-50%);
+    z-index:40;display:flex;flex-direction:column;gap:10px;
+  }
+  .floater a{
+    width:54px;height:54px;border-radius:50%;
+    background:rgba(255,255,255,.95);color:var(--navy-800);
+    display:grid;place-items:center;font-size:18px;font-weight:800;
+    box-shadow:0 6px 18px rgba(0,0,0,.2);
+    transition:transform .15s, background .2s;
+  }
+  .floater a:hover{transform:translateY(-2px);background:var(--gold);color:#1a1a1a}
+  .floater a.tel{background:var(--gold);color:#1a1a1a}
+
+  /* ============ Section common ============ */
+  .section{padding:110px 0}
+  .section.bg{background:var(--bg)}
+  .section-head{
+    display:flex;align-items:flex-end;justify-content:space-between;
+    margin-bottom:48px;gap:24px;flex-wrap:wrap;
+  }
+  .section-title{
+    font-size:36px;font-weight:800;letter-spacing:-1px;color:var(--navy-900);
+  }
+  .section-title small{
+    display:block;font-size:13px;color:var(--gold);letter-spacing:5px;
+    font-weight:600;margin-bottom:10px;text-transform:uppercase;
+  }
+  .more-link{
+    color:var(--text-soft);font-size:14px;font-weight:600;display:inline-flex;gap:6px;align-items:center;
+  }
+  .more-link:hover{color:var(--navy-700)}
+
+  /* ============ Practice (업무분야) ============ */
+  .practice{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .practice .card{
+    position:relative;overflow:hidden;border-radius:10px;
+    padding:38px 32px;min-height:260px;
+    background:var(--white);border:1px solid var(--line);
+    transition:transform .25s, box-shadow .25s, background .25s, color .25s;
+    cursor:pointer;
+  }
+  .practice .card .num{
+    position:absolute;top:24px;right:28px;font-size:14px;font-weight:700;color:var(--gold);letter-spacing:2px;
+  }
+  .practice .card .icon{
+    width:50px;height:50px;border-radius:8px;background:var(--bg-2);
+    display:grid;place-items:center;margin-bottom:24px;color:var(--navy-700);
+    font-size:24px;transition:background .25s, color .25s;
+  }
+  .practice .card h3{
+    font-size:22px;font-weight:800;margin-bottom:14px;color:var(--navy-900);
+  }
+  .practice .card p{font-size:14px;color:var(--text-soft);line-height:1.7}
+  .practice .card .tag{
+    display:inline-block;font-size:12px;color:var(--gold);font-weight:600;
+    margin-bottom:8px;letter-spacing:1px;
+  }
+  .practice .card:hover{
+    background:var(--navy-800);color:#fff;
+    transform:translateY(-4px);box-shadow:0 22px 40px rgba(11,16,36,.25);
+  }
+  .practice .card:hover h3,
+  .practice .card:hover .num{color:var(--gold-2)}
+  .practice .card:hover p{color:#c8cce0}
+  .practice .card:hover .icon{background:var(--gold);color:#1a1a1a}
+  .practice .card:hover .tag{color:var(--gold-2)}
+
+  /* ============ Members (구성원) ============ */
+  .members{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .member{
+    background:var(--white);border-radius:10px;overflow:hidden;
+    border:1px solid var(--line);transition:transform .25s, box-shadow .25s;
+    color:inherit;text-decoration:none;display:block;
+  }
+  .member:hover{transform:translateY(-4px);box-shadow:0 22px 40px rgba(11,16,36,.12)}
+  .member .photo{
+    aspect-ratio:3/4;
+    background:linear-gradient(160deg,#eef0f7 0%,#d5dae8 100%);
+    position:relative;overflow:hidden;
+    display:grid;place-items:end center;
+  }
+  .member .photo img{
+    width:100%;height:100%;object-fit:cover;object-position:center top;
+    display:block;transition:transform .4s ease;
+  }
+  .member:hover .photo img{transform:scale(1.04)}
+  .member .photo .role-badge{
+    position:absolute;top:14px;left:14px;
+    background:var(--navy-800);color:#fff;font-size:11px;font-weight:700;
+    padding:5px 10px;border-radius:3px;letter-spacing:1px;
+  }
+  .member .photo .role-badge.gold{background:var(--gold);color:#1a1a1a}
+  .member .info{padding:22px}
+  .member .info h4{font-size:18px;font-weight:800;margin-bottom:6px}
+  .member .info .pos{font-size:13px;color:var(--gold);font-weight:600;margin-bottom:12px;letter-spacing:1px}
+  .member .info .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .member .info .tags span{
+    font-size:12px;color:var(--text-soft);background:var(--bg);
+    padding:4px 9px;border-radius:3px;
+  }
+
+  /* ============ Cases (성공사례) ============ */
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .case-card{
+    background:var(--white);border-radius:10px;padding:30px;
+    border:1px solid var(--line);transition:transform .25s, box-shadow .25s;
+  }
+  .case-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px rgba(11,16,36,.1)}
+  .case-card .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+  .case-card .badge{
+    background:var(--navy-700);color:#fff;font-size:12px;font-weight:700;
+    padding:5px 12px;border-radius:3px;letter-spacing:1px;
+  }
+  .case-card .badge.civil{background:#2c7a4b}
+  .case-card .badge.admin{background:#7a4cb0}
+  .case-card .badge.family{background:#b07a3b}
+  .case-card .small{font-size:12px;color:var(--text-soft)}
+  .case-card h4{font-size:17px;font-weight:800;line-height:1.45;margin-bottom:14px;color:var(--navy-900)}
+  .case-card p{font-size:14px;color:var(--text-soft);line-height:1.7;margin-bottom:22px}
+  .case-card .result{
+    display:inline-flex;align-items:center;gap:8px;color:var(--gold);
+    font-weight:700;font-size:14px;border-top:1px solid var(--line);padding-top:18px;width:100%;
+  }
+
+  /* ============ Search CTA ============ */
+  .search-cta{
+    background:linear-gradient(135deg,#0b1024 0%,#11183a 100%);
+    padding:90px 0;color:#fff;text-align:center;
+  }
+  .search-cta h2{font-size:34px;font-weight:800;margin-bottom:10px}
+  .search-cta p{color:#c8cce0;margin-bottom:32px}
+  .search-box{
+    max-width:720px;margin:0 auto;background:#fff;border-radius:8px;
+    display:flex;align-items:center;padding:6px;
+  }
+  .search-box input{
+    flex:1;border:none;outline:none;padding:16px 20px;font-size:15px;color:var(--text);
+    font-family:inherit;
+  }
+  .search-box button{
+    background:var(--gold);color:#1a1a1a;padding:14px 28px;border-radius:6px;
+    font-weight:700;
+  }
+  .search-box button:hover{background:var(--gold-2)}
+  .search-tags{margin-top:22px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .search-tags a{
+    color:#c8cce0;font-size:13px;padding:6px 14px;border:1px solid rgba(255,255,255,.2);
+    border-radius:999px;transition:all .2s;
+  }
+  .search-tags a:hover{background:var(--gold);color:#1a1a1a;border-color:var(--gold)}
+
+  /* ============ Insights (법률정보) ============ */
+  .insights{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .insight{
+    background:var(--white);border-radius:10px;padding:26px;
+    border:1px solid var(--line);transition:transform .25s, box-shadow .25s;
+  }
+  .insight:hover{transform:translateY(-4px);box-shadow:0 22px 40px rgba(11,16,36,.1)}
+  .insight h4{font-size:16px;font-weight:800;line-height:1.5;margin-bottom:12px;min-height:48px}
+  .insight p{font-size:13px;color:var(--text-soft);line-height:1.7;margin-bottom:20px;min-height:90px}
+  .insight .author{display:flex;align-items:center;gap:10px}
+  .insight .avatar{
+    width:34px;height:34px;border-radius:50%;
+    background:linear-gradient(135deg,var(--navy-700),var(--navy-800));
+    color:#fff;display:grid;place-items:center;font-size:13px;font-weight:700;
+  }
+  .insight .author .name{font-size:13px;font-weight:600}
+  .insight .author .date{font-size:12px;color:var(--text-soft)}
+
+  /* ============ News ============ */
+  .news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .news-card{
+    background:var(--white);border-radius:10px;overflow:hidden;
+    border:1px solid var(--line);transition:transform .25s, box-shadow .25s;
+  }
+  .news-card:hover{transform:translateY(-4px);box-shadow:0 22px 40px rgba(11,16,36,.12)}
+  .news-thumb{
+    aspect-ratio:16/10;
+    background:linear-gradient(135deg,var(--navy-700) 0%,var(--navy-900) 100%);
+    display:grid;place-items:center;color:#fff;position:relative;
+  }
+  .news-thumb .logo{font-family:'Times New Roman',serif;text-align:center;color:#fff}
+  .news-thumb .logo b{display:block;font-size:24px;letter-spacing:4px;font-weight:700}
+  .news-thumb .logo i{font-style:italic;font-size:18px;letter-spacing:2px;opacity:.85}
+  .news-thumb::after{
+    content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.18);border-radius:6px;pointer-events:none;
+  }
+  .news-card{color:inherit;text-decoration:none;display:block}
+  .news-card .body{padding:22px}
+  .news-card .body .press{
+    display:inline-block;font-size:11px;color:var(--gold);font-weight:700;
+    letter-spacing:1px;margin-bottom:8px;
+  }
+  .news-card .body h4{font-size:15px;font-weight:700;line-height:1.55;margin-bottom:14px;
+    overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;color:var(--navy-900)}
+  .news-card .body .date{font-size:12px;color:var(--text-soft)}
+  .news-thumb .thumb-cat{
+    position:absolute;top:14px;right:14px;background:var(--gold);color:#1a1a1a;
+    font-size:11px;font-weight:700;padding:5px 10px;border-radius:3px;letter-spacing:1px;
+  }
+  .news-thumb.tag-interview{background:linear-gradient(135deg,#3a2c64 0%,#11183a 100%)}
+
+  /* ============ Footer ============ */
+  .footer{background:var(--navy-900);color:#aab1cb;padding:60px 0 40px;font-size:13px}
+  .footer .top{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:28px;
+    flex-wrap:wrap;gap:18px;
+  }
+  .footer .top nav{display:flex;gap:24px}
+  .footer .top nav a{color:#dfe2ed;font-weight:600;font-size:14px}
+  .footer .top nav a:hover{color:var(--gold-2)}
+  .footer .top .actions{display:flex;gap:10px}
+  .footer .top .actions a{
+    padding:10px 18px;border:1px solid rgba(255,255,255,.18);border-radius:5px;
+    font-size:13px;color:#fff;font-weight:600;
+  }
+  .footer .top .actions a.primary{background:var(--gold);color:#1a1a1a;border-color:var(--gold)}
+  .footer .biz{line-height:1.9;color:#8c93b0}
+  .footer .biz strong{color:#fff;margin-right:8px}
+  .footer .copy{margin-top:18px;color:#6e7596;font-size:12px;letter-spacing:.5px}
+  .footer .socials{display:flex;gap:10px;margin-top:18px}
+  .footer .socials a{
+    width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,.18);
+    display:grid;place-items:center;color:#fff;font-size:13px;
+  }
+  .footer .socials a:hover{background:var(--gold);color:#1a1a1a;border-color:var(--gold)}
+
+  /* ============ Responsive ============ */
+  @media (max-width: 1024px){
+    .hero h1{font-size:42px}
+    .hero-grid{grid-template-columns:1fr;padding-top:130px}
+    .practice,.cases,.insights,.news-grid{grid-template-columns:repeat(2,1fr)}
+    .members{grid-template-columns:repeat(2,1fr)}
+    .gnb{display:none}
+    .floater{display:none}
+  }
+  @media (max-width: 640px){
+    .hero h1{font-size:32px}
+    .section{padding:70px 0}
+    .section-title{font-size:26px}
+    .practice,.cases,.insights,.news-grid,.members{grid-template-columns:1fr}
+    .hero-strip .stats{gap:18px}
+    .hero-strip .stats .stat strong{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" id="siteHeader">
+  <div class="inner">
+    <a href="#" class="brand" aria-label="법무법인 선해">
+      <span class="mark">선</span>
+      <span class="name">법무법인 선해<small>SUNHYE LAW FIRM</small></span>
+    </a>
+    <nav class="gnb">
+      <a href="#about">법인 소개</a>
+      <a href="#practice">업무분야</a>
+      <a href="#members">구성원</a>
+      <a href="#cases">성공사례</a>
+      <a href="#insights">법률정보</a>
+      <a href="#news">NEWS</a>
+    </nav>
+    <a href="tel:0258605701" class="header-cta">📞 02-586-5701</a>
+  </div>
+</header>
+
+<!-- Floater -->
+<div class="floater" aria-label="빠른 메뉴">
+  <a href="tel:0258605701" class="tel" title="전화 상담">📞</a>
+  <a href="#consult" title="상담 신청">✉</a>
+  <a href="https://blog.naver.com" title="블로그">B</a>
+  <a href="#top" title="맨 위로">↑</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="hero-eyebrow">SUNHYE LAW FIRM · SINCE 2017</span>
+      <h1>고객의 답을 아는 곳,<br/><span class="accent">한 명이 아닌, 전담팀</span>이<br/>함께 동행합니다.</h1>
+      <p class="lead">판사 출신 대표변호사를 중심으로 형사·민사·행정·가사·기업법률자문 전 분야를 아우르는 전담팀이 의뢰인의 어려움을 끝까지 함께합니다.</p>
+      <div class="hero-actions">
+        <a href="#consult" class="btn btn-primary">상담 신청하기 →</a>
+        <a href="#practice" class="btn btn-ghost">업무분야 보기</a>
+      </div>
+    </div>
+    <aside class="result-card" aria-label="이번 달 주요 결과">
+      <span class="badge">RESULT REPORT</span>
+      <h3>결과로 증명한 <b>5월</b></h3>
+      <div class="row"><span class="label">사기·횡령 형사사건</span><span class="verdict">무죄</span></div>
+      <div class="row"><span class="label">부동산 명도소송</span><span class="verdict">전부승소</span></div>
+      <div class="row"><span class="label">조세 취소소송</span><span class="verdict">인용</span></div>
+      <div class="row"><span class="label">이혼·재산분할</span><span class="verdict">조정성립</span></div>
+      <div class="row"><span class="label">기업 M&A 자문</span><span class="verdict gray">계약체결</span></div>
+      <div class="row"><span class="label">행정처분 집행정지</span><span class="verdict">인용</span></div>
+      <button class="more-btn">더 많은 성공사례 보기 →</button>
+    </aside>
+  </div>
+  <div class="hero-strip">
+    <div class="inner">
+      <div class="stats">
+        <div class="stat"><strong>365일 24시</strong><span>긴급 상담 대응</span></div>
+        <div class="stat"><strong>4명</strong><span>전담 변호사</span></div>
+        <div class="stat"><strong>2,800+</strong><span>누적 자문·소송</span></div>
+      </div>
+      <a href="tel:0258605701" class="phone">
+        <span class="dot">📞</span>
+        02-586-5701
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Practice -->
+<section class="section" id="practice">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title"><small>PRACTICE AREAS</small>업무분야</h2>
+      <a href="#" class="more-link">전체 보기 →</a>
+    </div>
+
+    <div class="practice">
+      <article class="card">
+        <span class="num">01</span>
+        <div class="icon">⚖</div>
+        <span class="tag">CRIMINAL</span>
+        <h3>형사소송</h3>
+        <p>기업·재산·조세·사행성·성범죄 등 형사사건 피의자를 위한 경찰·검찰 수사단계 적극 대응. 수사단계부터 대응해야 결과가 달라집니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="num">02</span>
+        <div class="icon">📜</div>
+        <span class="tag">CIVIL</span>
+        <h3>민사소송</h3>
+        <p>가압류·가처분·강제집행 등 민사분쟁 전 과정. 당사자가 스스로 증명하고 주장해야 하는 민사소송에서 고객의 소중한 권리를 지켜드립니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="num">03</span>
+        <div class="icon">🏛</div>
+        <span class="tag">ADMINISTRATIVE</span>
+        <h3>행정소송</h3>
+        <p>조세소송·취소소송·무효확인소송·일반 행정소송. 신뢰와 열정으로 고객과의 소통을 통해 최적의 솔루션을 제공해드립니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="num">04</span>
+        <div class="icon">💍</div>
+        <span class="tag">FAMILY</span>
+        <h3>가사소송</h3>
+        <p>복잡한 이혼소송·재산분할·양육권. 상담부터 소송까지 의뢰인의 손을 끝까지 놓지 않고, 변호사가 직접 처음부터 끝까지 함께합니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="num">05</span>
+        <div class="icon">🏢</div>
+        <span class="tag">CORPORATE</span>
+        <h3>기업법률자문</h3>
+        <p>경영권 분쟁, 인수합병(M&A), 기업회생 및 파산. 혁신적인 고객우선주의 자문으로 기업의 가치를 지켜가고자 노력합니다.</p>
+      </article>
+
+      <article class="card">
+        <span class="num">06</span>
+        <div class="icon">📰</div>
+        <span class="tag">NEWS</span>
+        <h3>선해 소식</h3>
+        <p>법무법인 선해의 사례를 직접 확인하실 수 있습니다. 유익한 법률정보와 다양한 소식들을 지금 바로 공유해드립니다.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Members -->
+<section class="section bg" id="members">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title"><small>OUR LAWYERS</small>구성원</h2>
+      <a href="#" class="more-link">전체 보기 →</a>
+    </div>
+
+    <div class="members">
+      <a class="member" href="lawyer-leekyuho.html">
+        <div class="photo">
+          <span class="role-badge gold">대표</span>
+          <img src="img/lawyer_06.png" alt="이규호 대표변호사" loading="lazy"/>
+        </div>
+        <div class="info">
+          <h4>이규호 대표변호사</h4>
+          <div class="pos">CEO · MANAGING PARTNER</div>
+          <div class="tags"><span>판사 출신 11년</span><span>형사재판</span><span>기업자문</span><span>국가위원회</span></div>
+        </div>
+      </a>
+
+      <a class="member" href="lawyer-minhyun.html">
+        <div class="photo">
+          <span class="role-badge">파트너</span>
+          <img src="img/lawyer_07.png" alt="민 현 변호사" loading="lazy"/>
+        </div>
+        <div class="info">
+          <h4>민 현 변호사</h4>
+          <div class="pos">PARTNER · 행정법 전문</div>
+          <div class="tags"><span>행정법 전문</span><span>공공기관 자문</span><span>창원지법 조정위원</span></div>
+        </div>
+      </a>
+
+      <a class="member" href="lawyer-limjongyeop.html">
+        <div class="photo">
+          <span class="role-badge">변호사</span>
+          <img src="img/lawyer_08.png" alt="임종엽 변호사" loading="lazy"/>
+        </div>
+        <div class="info">
+          <h4>임종엽 변호사</h4>
+          <div class="pos">ASSOCIATE</div>
+          <div class="tags"><span>대한변협 정책위원</span><span>서초경찰서 수사상담변호사</span><span>운경재단 감사</span></div>
+        </div>
+      </a>
+
+      <a class="member" href="lawyer-songinhyuk.html">
+        <div class="photo">
+          <span class="role-badge">변호사</span>
+          <img src="img/lawyer_09.png" alt="송인혁 변호사" loading="lazy"/>
+        </div>
+        <div class="info">
+          <h4>송인혁 변호사</h4>
+          <div class="pos">ASSOCIATE · 군법무관 출신</div>
+          <div class="tags"><span>군검사 경력</span><span>국방부 6.25 비정규군 보상</span><span>형사·행정</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Cases -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title"><small>SUCCESS CASES</small>성공사례</h2>
+      <a href="#" class="more-link">전체 보기 →</a>
+    </div>
+
+    <div class="cases">
+      <article class="case-card">
+        <div class="head">
+          <span class="badge">형사</span>
+          <span class="small">2026.04 · 서울중앙지법</span>
+        </div>
+        <h4>법인자금 횡령 혐의로 기소된 임원, 무죄 판결로 명예 회복</h4>
+        <p>회계장부 분석과 자금 흐름 재구성을 통해 횡령 의도가 없었음을 입증, 1심 무죄를 이끌어낸 사례입니다.</p>
+        <div class="result">⚖ 1심 무죄 선고</div>
+      </article>
+
+      <article class="case-card">
+        <div class="head">
+          <span class="badge civil">민사</span>
+          <span class="small">2026.03 · 수원지법</span>
+        </div>
+        <h4>임차인 명도 거부 사건, 부동산 인도 및 임료 상당 손해배상 전부 인용</h4>
+        <p>점유이전금지가처분 후 본안소송을 병행하여 의뢰인의 부동산을 신속히 회복한 사례입니다.</p>
+        <div class="result">⚖ 청구 전부 인용</div>
+      </article>
+
+      <article class="case-card">
+        <div class="head">
+          <span class="badge admin">행정</span>
+          <span class="small">2026.02 · 서울행정법원</span>
+        </div>
+        <h4>법인세 부과처분 취소소송, 관련 비용 손금산입 인정으로 인용</h4>
+        <p>판례·예규·실질과세 원칙을 종합 적용하여 과세관청의 처분을 취소시킨 사례입니다.</p>
+        <div class="result">⚖ 처분 취소</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Search CTA -->
+<section class="search-cta" id="consult">
+  <div class="container">
+    <h2>법무법인 선해가 해결해 드립니다.</h2>
+    <p>어떤 도움이 필요하신가요?</p>
+    <form class="search-box" onsubmit="event.preventDefault();alert('상담 키워드를 접수했습니다.');">
+      <input type="text" placeholder="궁금한 키워드를 입력해 주세요 (예: 명도소송, 이혼, 횡령)" />
+      <button type="submit">검색</button>
+    </form>
+    <div class="search-tags">
+      <a href="#">#명도소송</a>
+      <a href="#">#성범죄</a>
+      <a href="#">#이혼</a>
+      <a href="#">#상속</a>
+      <a href="#">#법인세</a>
+      <a href="#">#M&A</a>
+    </div>
+  </div>
+</section>
+
+<!-- Insights -->
+<section class="section bg" id="insights">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title"><small>LEGAL INSIGHTS</small>법률정보</h2>
+      <a href="#" class="more-link">전체 보기 →</a>
+    </div>
+
+    <div class="insights">
+      <article class="insight">
+        <h4>경찰 조사 출석 전 반드시 확인해야 할 5가지 체크리스트</h4>
+        <p>피의자 조사 전 변호인 선임, 진술거부권 행사 범위, 휴대폰 임의제출 등 사건 결과를 가르는 초기 대응 포인트를 정리했습니다.</p>
+        <div class="author">
+          <span class="avatar">민</span>
+          <div><div class="name">민 현 변호사</div><div class="date">2026-05-02</div></div>
+        </div>
+      </article>
+
+      <article class="insight">
+        <h4>상가건물 임대차 갱신요구권, 거절할 수 있는 8가지 사유</h4>
+        <p>10년 계약갱신요구권의 예외 사유와 임대인이 실제 다툴 수 있는 입증 자료, 명도소송 흐름까지 한 번에 살펴봅니다.</p>
+        <div class="author">
+          <span class="avatar">임</span>
+          <div><div class="name">임종엽 변호사</div><div class="date">2026-04-26</div></div>
+        </div>
+      </article>
+
+      <article class="insight">
+        <h4>법인세 경정청구, 5년 안에 환급받는 실무 가이드</h4>
+        <p>경정청구 사유의 유형별 분류, 청구 기간 산정, 거부처분 시 행정심판·행정소송 단계별 전략을 정리했습니다.</p>
+        <div class="author">
+          <span class="avatar">이</span>
+          <div><div class="name">이규호 대표변호사</div><div class="date">2026-04-15</div></div>
+        </div>
+      </article>
+
+      <article class="insight">
+        <h4>이혼 시 재산분할 비율, 법원이 실제로 보는 4가지 기준</h4>
+        <p>혼인 기간·기여도·재산 형성 경위·향후 부양 필요성. 최근 가정법원 판결 흐름을 토대로 분할 비율의 실무 산정 기준을 풀어드립니다.</p>
+        <div class="author">
+          <span class="avatar">송</span>
+          <div><div class="name">송인혁 변호사</div><div class="date">2026-04-08</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section class="section" id="news">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title"><small>SUNHYE NEWS</small>NEWS</h2>
+      <a href="#" class="more-link">전체 보기 →</a>
+    </div>
+
+    <div class="news-grid">
+      <a class="news-card" href="https://www.widedaily.com/news/articleView.html?idxno=32927" target="_blank" rel="noopener">
+        <div class="news-thumb tag-interview"><div class="logo"><b>SUNHYE</b><i>Law Firm</i></div><span class="thumb-cat">INTERVIEW</span></div>
+        <div class="body">
+          <span class="press">와이드경제 [법조인 이사람]</span>
+          <h4>“의뢰인에게만 집중하는 차별화된 형사소송 법률서비스” — 이규호 대표변호사 인터뷰</h4>
+          <div class="date">법조인 인터뷰 · 와이드경제</div>
+        </div>
+      </a>
+      <a class="news-card" href="https://www.lawtimes.co.kr/news/125828" target="_blank" rel="noopener">
+        <div class="news-thumb"><div class="logo"><b>SUNHYE</b><i>Law Firm</i></div><span class="thumb-cat">개업</span></div>
+        <div class="body">
+          <span class="press">법률신문</span>
+          <h4>법률사무소 선해 개업 — 서울남부지법 판사 출신 이규호 변호사 새 출발</h4>
+          <div class="date">2015-02-23 업무개시 · 법률신문</div>
+        </div>
+      </a>
+      <article class="news-card">
+        <div class="news-thumb"><div class="logo"><b>SUNHYE</b><i>Law Firm</i></div><span class="thumb-cat">위원</span></div>
+        <div class="body">
+          <span class="press">선해 소식</span>
+          <h4>이규호 대표변호사, 대통령 직속 공무원재해보상 연금위원회 위원 위촉</h4>
+          <div class="date">대통령 직속 위원회 활동</div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb"><div class="logo"><b>SUNHYE</b><i>Law Firm</i></div><span class="thumb-cat">위원</span></div>
+        <div class="body">
+          <span class="press">선해 소식</span>
+          <h4>대검찰청 검찰수사심의위원회 위원 / 서울중앙지검 형사상고심의위원회 위원 활동</h4>
+          <div class="date">검찰 수사·기소 단계 외부 자문</div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb"><div class="logo"><b>SUNHYE</b><i>Law Firm</i></div><span class="thumb-cat">자문</span></div>
+        <div class="body">
+          <span class="press">선해 소식</span>
+          <h4>대한민국공무원노동조합총연맹 자문 — 공무원·공공기관 분야 자문 강화</h4>
+          <div class="date">공노총·SH공사·POBA 등 공공기관 자문</div>
+        </div>
+      </article>
+      <article class="news-card">
+        <div class="news-thumb"><div class="logo"><b>SUNHYE</b><i>Law Firm</i></div><span class="thumb-cat">기업자문</span></div>
+        <div class="body">
+          <span class="press">선해 소식</span>
+          <h4>롯데제이티비·㈜리드코프·㈜동승·㈜코스온 등 다수 기업 자문변호사 활동</h4>
+          <div class="date">기업법무·M&A·내부통제 자문</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="top">
+      <nav>
+        <a href="#about">법인 소개</a>
+        <a href="#practice">업무분야</a>
+        <a href="#members">구성원</a>
+        <a href="#cases">성공사례</a>
+        <a href="#news">NEWS</a>
+      </nav>
+      <div class="actions">
+        <a href="#consult">상담 신청</a>
+        <a href="tel:0258605701" class="primary">📞 02-586-5701</a>
+      </div>
+    </div>
+    <div class="biz">
+      <strong>법무법인 선해 (LAWFIRM SUNHYE)</strong>
+      대표변호사 : 이규호 ｜ 광고책임변호사 : 이규호 대표변호사<br/>
+      주소 : 서울 서초구 사임당로1길 7, 3층 (서초동, 세현빌딩) ｜ 사업자등록번호 : 372-86-00364<br/>
+      대표전화 : 02-586-5701 ｜ 팩스 : 02-586-5703 ｜ 이메일 : sunhey73@naver.com
+    </div>
+    <div class="copy">COPYRIGHT © 2026 LAWFIRM SUNHYE. ALL RIGHTS RESERVED.</div>
+    <div class="socials">
+      <a href="#" title="네이버 블로그">B</a>
+      <a href="#" title="유튜브">▶</a>
+      <a href="#" title="인스타그램">◎</a>
+      <a href="#" title="페이스북">f</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // 헤더 스크롤 시 흰색 배경으로 전환
+  (function(){
+    var header = document.getElementById('siteHeader');
+    function onScroll(){
+      if(window.scrollY > 60) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    onScroll();
+  })();
+</script>
+</body>
+</html>

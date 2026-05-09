@@ -1,0 +1,157 @@
+/* Shared styles for lawyer detail pages */
+:root{
+  --navy-900:#0b1024;--navy-800:#11183a;--navy-700:#1a2452;--navy-600:#1f2d6b;
+  --gold:#c9a96a;--gold-2:#e2c98a;--bg:#f5f6fa;--bg-2:#eceef5;
+  --text:#1b1f33;--text-soft:#4d5470;--line:#dfe2ed;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color:var(--text);background:#fff;line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+img{max-width:100%;display:block}
+
+.container{max-width:1180px;margin:0 auto;padding:0 32px}
+
+/* Header */
+.header{
+  position:sticky;top:0;left:0;right:0;z-index:50;background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.header .inner{
+  display:flex;align-items:center;justify-content:space-between;
+  height:72px;max-width:1280px;margin:0 auto;padding:0 32px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.brand .mark{
+  width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold-2) 100%);
+  display:grid;place-items:center;color:#1a1a1a;font-weight:900;
+}
+.brand .name{font-size:17px;color:var(--navy-900)}
+.brand .name small{display:block;font-size:11px;letter-spacing:3px;font-weight:500;color:var(--text-soft);margin-top:-1px}
+.gnb{display:flex;gap:32px}
+.gnb a{font-weight:600;font-size:14px;color:var(--text)}
+.gnb a:hover{color:var(--navy-700)}
+.header-cta{
+  padding:10px 18px;border-radius:5px;font-size:13px;font-weight:700;
+  background:var(--navy-800);color:#fff;
+}
+.header-cta:hover{background:var(--navy-700)}
+
+/* Sub hero */
+.sub-hero{
+  background:linear-gradient(135deg,#0b1024 0%,#11183a 50%,#1a2452 100%);
+  color:#fff;padding:60px 0;
+}
+.sub-hero .crumb{font-size:13px;color:#aab1cb;letter-spacing:1px}
+.sub-hero h1{font-size:34px;font-weight:800;margin-top:8px;letter-spacing:-.5px}
+.sub-hero .crumb a{color:#aab1cb}
+.sub-hero .crumb a:hover{color:#fff}
+
+/* Profile */
+.profile{padding:70px 0 90px}
+.profile-grid{display:grid;grid-template-columns:380px 1fr;gap:60px}
+.profile-photo{
+  background:linear-gradient(160deg,#eef0f7 0%,#d5dae8 100%);
+  border-radius:14px;overflow:hidden;aspect-ratio:3/4;
+  border:1px solid var(--line);position:relative;
+}
+.profile-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.profile-photo .role-badge{
+  position:absolute;top:18px;left:18px;background:var(--navy-800);color:#fff;
+  font-size:12px;font-weight:700;padding:6px 12px;border-radius:3px;letter-spacing:1px;
+}
+.profile-photo .role-badge.gold{background:var(--gold);color:#1a1a1a}
+
+.profile-info .eyebrow{
+  font-size:12px;color:var(--gold);font-weight:700;letter-spacing:4px;text-transform:uppercase;
+}
+.profile-info h2{font-size:42px;font-weight:800;letter-spacing:-1px;margin:8px 0 14px;color:var(--navy-900)}
+.profile-info .pos{font-size:15px;color:var(--navy-700);font-weight:700;margin-bottom:24px;letter-spacing:.5px}
+.profile-info .summary{
+  font-size:15px;color:var(--text-soft);line-height:1.85;
+  border-left:3px solid var(--gold);padding:6px 0 6px 18px;margin-bottom:32px;
+}
+.contact-row{display:flex;flex-wrap:wrap;gap:24px;font-size:14px;color:var(--text-soft);margin-bottom:36px}
+.contact-row b{color:var(--navy-900);margin-right:6px}
+
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.tags span{
+  font-size:13px;color:var(--navy-800);background:var(--bg);
+  padding:6px 14px;border-radius:999px;font-weight:600;
+}
+
+.btn-row{display:flex;gap:10px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:6px;
+  font-weight:700;font-size:14px;
+}
+.btn.primary{background:var(--gold);color:#1a1a1a}
+.btn.primary:hover{background:var(--gold-2)}
+.btn.ghost{background:#fff;color:var(--navy-800);border:1px solid var(--navy-800)}
+.btn.ghost:hover{background:var(--navy-800);color:#fff}
+
+/* Bio sections */
+.bio{padding:0 0 100px;background:var(--bg)}
+.bio .container{padding-top:70px}
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.bio-card{
+  background:#fff;border-radius:10px;padding:36px 32px;border:1px solid var(--line);
+}
+.bio-card h3{
+  font-size:14px;color:var(--gold);letter-spacing:4px;text-transform:uppercase;
+  font-weight:700;margin-bottom:8px;
+}
+.bio-card h3 b{display:block;color:var(--navy-900);font-size:22px;letter-spacing:-.5px;margin-top:6px}
+.bio-card .list{margin-top:20px}
+.bio-card .list li{
+  position:relative;padding:10px 0 10px 22px;border-bottom:1px dashed var(--line);
+  font-size:14px;color:var(--text);line-height:1.65;
+}
+.bio-card .list li:last-child{border-bottom:none}
+.bio-card .list li::before{
+  content:"";position:absolute;left:0;top:18px;width:8px;height:8px;border-radius:50%;
+  background:var(--gold);
+}
+.bio-card .list li.now{font-weight:700;color:var(--navy-900)}
+.bio-card .list li.now::before{background:var(--navy-700)}
+
+.bio-card.full{grid-column:1 / -1}
+.bio-card.full .columns{column-count:2;column-gap:36px}
+.bio-card.full .columns li{break-inside:avoid}
+
+/* Other lawyers */
+.also{padding:90px 0;background:#fff}
+.also h3{font-size:24px;font-weight:800;margin-bottom:30px;color:var(--navy-900)}
+.also .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.also .card{
+  display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);
+  border-radius:10px;padding:14px;transition:transform .25s, box-shadow .25s, border-color .2s;
+}
+.also .card:hover{transform:translateY(-3px);box-shadow:0 16px 30px rgba(11,16,36,.08);border-color:var(--gold)}
+.also .card .ph{
+  width:74px;height:90px;border-radius:6px;overflow:hidden;flex:none;background:var(--bg-2);
+}
+.also .card .ph img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.also .card .nm{font-size:15px;font-weight:800;color:var(--navy-900)}
+.also .card .desc{font-size:12px;color:var(--text-soft);margin-top:4px}
+
+/* Footer (compact) */
+.footer{background:var(--navy-900);color:#aab1cb;padding:40px 0;font-size:13px}
+.footer .biz{line-height:1.9;color:#8c93b0}
+.footer .biz strong{color:#fff;margin-right:8px}
+.footer .copy{margin-top:14px;color:#6e7596;font-size:12px}
+
+@media (max-width:900px){
+  .profile-grid{grid-template-columns:1fr;gap:32px}
+  .profile-photo{max-width:380px;margin:0 auto}
+  .bio-grid{grid-template-columns:1fr}
+  .bio-card.full .columns{column-count:1}
+  .also .grid{grid-template-columns:1fr}
+  .gnb{display:none}
+  .profile-info h2{font-size:32px}
+}
